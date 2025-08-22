@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antonio D’Avino — Portfolio, Codice, Pubblicazioni</title>
+  <meta name="description" content="Portfolio moderno di Antonio D’Avino: progetti cloud & AI, snippet di codice, pubblicazioni e contatti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Prism for code highlight (lightweight via CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" integrity="sha256-sb6O5R6rH2Q8k5uBkUVn3bGgQqN1Q2Zx1nSm4iVt8yU=" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" integrity="sha256-K1F0Dtd9tqj8u+q0p7mOn8HRSQFfSx5kO2C2j0Yk3Jw=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Antonio D’Avino — Portfolio" />
+  <meta property="og:description" content="Progetti cloud & AI, codice e pubblicazioni." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-card.png" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Antonio D’Avino",
+    "jobTitle":"Adv App/Cloud Supp and Eng Assoc Director",
+    "address":{"@type":"PostalAddress","addressLocality":"Napoli","addressCountry":"IT"},
+    "url":"",
+    "knowsAbout":["Salesforce","Azure","GenAI","Agentforce","MuleSoft","Automazione AMS"],
+    "worksFor":{"@type":"Organization","name":""}
+  }
+  </script>
+</head>
+<body>
+  <header class="hdr">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Home">
+        <img src="assets/logo-mark.svg" alt="Logo" width="28" height="28"/>
+        <span>Antonio D’Avino</span>
+      </a>
+      <nav class="nav">
+        <a href="#projects">Progetti</a>
+        <a href="#code">Codice</a>
+        <a href="#publications">Pubblicazioni</a>
+        <a href="#about">Chi sono</a>
+        <a href="#contact" class="btn small">Contatti</a>
+        <button id="themeToggle" class="icon" aria-label="Tema scuro/chiaro">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <h1>Soluzioni <span class="accent">Cloud & AI</span> che scalano.</h1>
+          <p>Associate Director • Application/Cloud Support & Engineering. Guida, architetture API‑first, integrazioni <strong>Salesforce/Azure</strong>, automazione <strong>AMS</strong> con <strong>GenAI</strong>.</p>
+          <div class="cta">
+            <a class="btn primary" href="assets/Antonio_DAvino_CV.pdf" download>Scarica CV</a>
+            <a class="btn" href="#projects">Esplora progetti</a>
+          </div>
+          <div class="badges">
+            <span class="tag">Salesforce</span>
+            <span class="tag">Azure</span>
+            <span class="tag">Agent AI</span>
+            <span class="tag">MuleSoft</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/hero-illustration.svg" alt="Cloud & AI" />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="head">
+          <h2>Progetti</h2>
+          <div class="filters">
+            <button class="chip active" data-filter="all">Tutti</button>
+            <button class="chip" data-filter="cloud">Cloud</button>
+            <button class="chip" data-filter="ai">AI</button>
+            <button class="chip" data-filter="integration">Integrazioni</button>
+          </div>
+        </div>
+        <div id="projectGrid" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="code" class="section alt">
+      <div class="wrap">
+        <h2>Snippet di codice</h2>
+        <div class="code-grid">
+          <article class="code-card">
+            <div class="meta"><span class="pill js">JavaScript</span><span>Client util</span></div>
+<pre><code class="language-javascript">// Debounce utility
+export function debounce(fn, wait=250){
+  let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn.apply(null,args), wait); };
+}
+</code></pre>
+          </article>
+          <article class="code-card">
+            <div class="meta"><span class="pill py">Python</span><span>Mini ETL</span></div>
+<pre><code class="language-python">import csv
+from pathlib import Path
+
+def load_csv(p):
+    with open(p, newline='', encoding='utf-8') as f:
+        return list(csv.DictReader(f))
+
+rows = load_csv('input.csv')
+rows = [r for r in rows if r['status']=='active']
+Path('out.json').write_text(__import__('json').dumps(rows, ensure_ascii=False, indent=2))
+</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="wrap">
+        <h2>Pubblicazioni</h2>
+        <div class="list">
+          <a class="post" href="posts/genai-ams.html">
+            <div>
+              <h3>Automazione AMS con GenAI: metriche che contano</h3>
+              <p>Dal clustering dei ticket alla risoluzione automatizzata: impatti su MTTR e CSAT.</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="post" href="posts/agentforce-mepa.html">
+            <div>
+              <h3>Agentforce headless nel MEPA Light</h3>
+              <p>Widget conversazionale, orchestrazione MuleSoft, zero dati residenti su Salesforce.</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="wrap about">
+        <img class="avatar" src="assets/avatar.svg" alt="Antonio D’Avino"/>
+        <div>
+          <h2>Chi sono</h2>
+          <p>Guido team e iniziative di trasformazione con piattaforme cloud e GenAI. Credo nella semplicità delle architetture, nel misurare per migliorare e nel far crescere le persone.</p>
+          <ul class="ticks">
+            <li>Leadership di unità 400+ risorse su progetti Salesforce</li>
+            <li>Integrazioni API & architetture headless</li>
+            <li>Agent AI (Amethyst), automazione Assist Zen & MAIA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Contatti</h2>
+        <form id="contactForm" class="contact" method="post" action="#">
+          <div class="row">
+            <label>Nome<input type="text" name="name" required></label>
+            <label>Email<input type="email" name="email" required></label>
+          </div>
+          <label>Messaggio<textarea name="message" rows="5" required></textarea></label>
+          <label class="consent"><input type="checkbox" required> Acconsento al trattamento dei dati per rispondere al messaggio (GDPR).</label>
+          <button class="btn primary" type="submit">Invia</button>
+          <p class="note">* Configura un endpoint (Formspree/Azure Functions) e aggiorna l’attributo <code>action</code>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ftr">
+    <div class="wrap">
+      <small>© <span id="year"></span> Antonio D’Avino · Napoli · <a href="assets/Antonio_DAvino_CV.pdf">CV</a></small>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
