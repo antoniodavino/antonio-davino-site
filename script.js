@@ -11,9 +11,9 @@ document.getElementById('themeToggle').addEventListener('click',()=>{
 document.getElementById('year').textContent = new Date().getFullYear();
 // Projects data & filter
 const projects = [
-  {title:'MEPA Light · Agentforce headless', desc:'Widget chat integrato, MuleSoft, nessun dato su Salesforce.', tags:['ai','integration'], links:[{href:'#',label:'Case study'},{href:'#',label:'Demo'}]},
-  {title:'Assist Zen · Clustering & Classificazione', desc:'Automazione AMS con GenAI, KPI migliorati.', tags:['ai'], links:[{href:'#',label:'Repo'},{href:'#',label:'Note'}]},
-  {title:'Piattaforma integrazioni Azure', desc:'API-first, sicurezza, monitoraggio.', tags:['cloud','integration'], links:[{href:'#',label:'Architecture'}]},
+  {title:'xxxx · xxxx', desc:'xxxx, xxxx, xxxx.', tags:['ai','integration'], links:[{href:'#',label:'Case study'},{href:'#',label:'Demo'}]},
+  {title:'xxxxx · Clustering & Classificazione', desc:'xxxx.', tags:['ai'], links:[{href:'#',label:'Repo'},{href:'#',label:'Note'}]},
+  {title:'xxxx', desc:'Axxxxx.', tags:['cloud','integration'], links:[{href:'#',label:'Architecture'}]},
 ];
 const grid = document.getElementById('projectGrid');
 function render(filter='all'){
