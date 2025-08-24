@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Antonio D’Avino — Associate Director at Accenture</title>
-  <meta name="description" content="Profilo professionale di Antonio D’Avino. Associate Director at Accenture. Contatti e CV interattivo." />
+  <meta name="description" content="Profilo professionale di Antonio D’Avino. Associate Director at Accenture. Contatti e CV." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.ico" />
   <meta name="theme-color" content="#0f172a" />
@@ -42,15 +42,72 @@
         <ul class="contacts">
           <li><span>📧</span> <a href="mailto:antonio.davino@accenture.com">antonio.davino@accenture.com</a></li>
           <li><span>📨</span> <a href="mailto:antonio.davino@gmail.com">antonio.davino@gmail.com</a></li>
-          <li><span>🔗</span> <a id="linkedin-link" href="https://www.linkedin.com/in/xxx" target="_blank">
-          <button class="btn primary" id="open-cv">Apri CV interattivo</button>
+          <!-- Rimosso qualunque riferimento/link a LinkedIn come richiesto -->
+        </ul>
+
+        <div class="cta">
+          <button class="btn primary" id="view-cv">Visualizza CV</button>
           <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">Scarica CV (PDF)</a>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Sezioni (nascoste finché non selezionate dal menu) -->
+  <!-- Sezione CV (nascosta finché non richiesta) -->
+  <section id="cv" class="section hidden" aria-labelledby="cv-title">
+    <div class="wrap">
+      <div class="cv-toolbar">
+        <h2 id="cv-title">CV — Antonio D’Avino</h2>
+        <div class="tools">
+          <button id="btn-listen" class="btn ghost">▶️ Ascolta questo CV</button>
+          <button id="open-agent" class="btn ghost">🤖 Apri chat AI</button>
+          <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">⬇️ PDF</a>
+        </div>
+      </div>
+
+      <article class="cv">
+        <header>
+          <h1 style="margin-bottom:6px">Antonio D’Avino</h1>
+          <p class="muted">Associate Director — Advanced App/Cloud Support & Engineering</p>
+        </header>
+
+        <section aria-labelledby="exec-sum" class="cv-block">
+          <h3 id="exec-sum">Executive Summary</h3>
+          <p>
+            Guido iniziative su Salesforce/Cloud e adozione GenAI (assistenti conversazionali, automazione ticket, integrazioni headless).
+            Focalizzato su affidabilità operativa, scalabilità e change management.
+          </p>
+        </section>
+
+        <section class="kpi" aria-label="Impatto in numeri">
+          <div><strong>400+</strong><span>persone in BU</span></div>
+          <div><strong>-30%</strong><span>tempi medi delivery</span></div>
+          <div><strong>95%</strong><span>SLA AMS</span></div>
+          <div><strong>2</strong><span>assistenti AI introdotti</span></div>
+        </section>
+
+        <section aria-labelledby="exp-title" class="cv-block">
+          <h3 id="exp-title">Esperienza recente</h3>
+          <ul>
+            <li>
+              <strong>Associate Director</strong> (2023–oggi):
+              governance programmi enterprise e AMS; integrazione Agentforce headless su portale MEPA
+              (via MuleSoft; zero data at rest su Salesforce); roll‑out Assist Zen &amp; MAIA per clustering/automation ticket.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="skills-title" class="cv-block">
+          <h3 id="skills-title">Competenze</h3>
+          <p class="muted">Leadership, integrazioni API, GenAI, Salesforce, MuleSoft, Azure.</p>
+        </section>
+
+        <footer class="cv__foot muted">Versione: Agosto 2025 — © Antonio D’Avino</footer>
+      </article>
+    </div>
+  </section>
+
+  <!-- Sezioni “on‑demand” dal menu (inizialmente nascoste) -->
   <section id="projects" class="section hidden" aria-labelledby="projects-title">
     <div class="wrap">
       <h2 id="projects-title">Progetti</h2>
@@ -86,57 +143,7 @@
     </div>
   </section>
 
-  <!-- MODALE: CV Interattivo -->
-  <div id="cv-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="cv-title">
-    <div class="modal__content">
-      <header class="modal__header">
-        <h3 id="cv-title">CV Interattivo</h3>
-        <div class="modal__actions">
-          <button id="btn-listen" class="btn ghost">▶️ Ascolta questo CV</button>
-          <button id="open-agent" class="btn ghost">🤖 Apri chat AI</button>
-          <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">⬇️ PDF</a>
-          <button id="close-cv" class="icon-btn" aria-label="Chiudi">✕</button>
-        </div>
-      </header>
-
-      <div class="modal__body">
-        <!-- Contenuto “tipo quello allegato”: ho compattato e reso scorrevole in modale,
-             mantenendo i tuoi elementi interattivi (Listen + Agent). -->
-        <article class="cv">
-          <h1>Antonio D’Avino</h1>
-          <p class="muted">Associate Director — Advanced App/Cloud Support & Engineering</p>
-
-          <section aria-labelledby="exec-sum">
-            <h4 id="exec-sum">Executive Summary</h4>
-            <p>Guido iniziative su Salesforce/Cloud e adozione GenAI (assistenti conversazionali, automazione ticket, integrazioni headless). Focalizzato su affidabilità operativa, scalabilità e change management.</p>
-          </section>
-
-          <section class="kpi" aria-label="Impatto in numeri">
-            <div><strong>400+</strong><span>persone in BU</span></div>
-            <div><strong>-30%</strong><span>tempi medi delivery</span></div>
-            <div><strong>95%</strong><span>SLA AMS</span></div>
-            <div><strong>2</strong><span>assistenti AI</span></div>
-          </section>
-
-          <section aria-labelledby="exp-title">
-            <h4 id="exp-title">Esperienza recente</h4>
-            <ul>
-              <li><strong>Associate Director</strong> (2023–oggi): governance programmi enterprise e AMS; integrazione Agentforce headless su portale MEPA (via MuleSoft; zero data at rest su Salesforce); roll‑out Assist Zen & MAIA per clustering/automation ticket. [1](https://myoffice.accenture.com/personal/antonio_davino_accenture_com/_layouts/15/download.aspx?UniqueId=47250e2b-287c-41f0-a706-f21497413458&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIwMmY4ZWUxMi0yMzI4LTQxNTAtYmE2Zi0wNGFlZGE3YWM5NGIiLCJhcHBfZGlzcGxheW5hbWUiOiJPZmZpY2UgMzY1IFNlYXJjaCBTZXJ2aWNlIiwiYXBwaWQiOiI2NmE4ODc1Ny0yNThjLTRjNzItODkzYy0zZThiZWQ0ZDY4OTkiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXlvZmZpY2UuYWNjZW50dXJlLmNvbUBlMDc5M2QzOS0wOTM5LTQ5NmQtYjEyOS0xOThlZGQ5MTZmZWIiLCJleHAiOiIxNzU2MDgwNjA5In0.CgoKBGFjcnMSAmMyCkAKDGVudHJhX2NsYWltcxIwQ0lXWnJzVUdFQUFhRms5bVpETmZPR05WTWpCUFNXaFROV3R0ZUdsSlFVRXFBQT09CjIKCmFjdG9yYXBwaWQSJDAwMDAwMDAzLTAwMDAtMDAwMC1jMDAwLTAwMDAwMDAwMDAwMAoKCgRzbmlkEgI2NBILCKCi4_ms27E-EAUaDjIwLjE5MC4xMzIuMTA2KixIbTlFZDBhQkJ4ZUNsSHRjcVBST2laMEppejdTSnZWaUphOWdZMFpLeVpRPTCcATgBQhChvwhYLQAAoACAKNJQI3uKShBoYXNoZWRwcm9vZnRva2VuUhJbImttc2kiLCJkdmNfY21wIl1aC1siYXBwX3JlcyJdaiRmMmU0OWJlZi04YjZjLTQzNDMtOWQwZi0yM2NhOTkwZmU0NjJyKTBoLmZ8bWVtYmVyc2hpcHwxMDAzN2ZmZThkM2UxOWExQGxpdmUuY29tegEyggESCTk9eeA5CW1JEbEpGY7dkW_rkgEHQW50b25pb5oBB0QnQXZpbm-iARxhbnRvbmlvLmRhdmlub0BhY2NlbnR1cmUuY29tqgEQMTAwMzdGRkU4RDNFMTlBMbIBOmdyb3VwLnJlYWQgYWxsZmlsZXMucmVhZCBhbGxwcm9maWxlcy5yZWFkIGFsbHByb2ZpbGVzLnJlYWTIAQE.JRlKjdBGmotIFmWc-kDzFPOs9TcbKB1pb6ZwPEQe2kY&ApiVersion=2.0&web=1)</li>
-            </ul>
-          </section>
-
-          <section aria-labelledby="skills-title">
-            <h4 id="skills-title">Competenze</h4>
-            <p class="muted">Leadership, integrazioni API, GenAI, Salesforce, MuleSoft, Azure.</p>
-          </section>
-
-          <footer class="cv__foot muted">Versione: Agosto 2025 — © Antonio D’Avino</footer>
-        </article>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODALE: Chat AI (placeholder) -->
+  <!-- MODALE: Chat AI (placeholder, opzionale) -->
   <div id="agent-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="agent-title">
     <div class="modal__content">
       <header class="modal__header">
@@ -150,4 +157,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-

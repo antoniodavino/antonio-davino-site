@@ -9,9 +9,16 @@ burger?.addEventListener('click', () => {
 
 /* ====== Sezioni on-demand (dal menu) ====== */
 const sections = Array.from(document.querySelectorAll('.section'));
+
+function cancelTTS(){
+  try {
+    window.speechSynthesis?.cancel();
+  } catch {}
+}
+
 function showSection(id){
-  // Chiudi eventuali modali aperte
-  closeCV(); closeAgent();
+  // Stop eventuale lettura vocale quando si cambia sezione
+  cancelTTS();
 
   // Nasconde tutte e mostra solo la richiesta
   sections.forEach(s => s.classList.add('hidden'));
@@ -43,24 +50,14 @@ window.addEventListener('DOMContentLoaded', () => {
   if (hash) showSection(hash);
 });
 
-/* ====== CV interattivo (modale) ====== */
-const openCVBtn = document.getElementById('open-cv');
-const cvModal = document.getElementById('cv-modal');
-const closeCVBtn = document.getElementById('close-cv');
-
-function openCV(){ cvModal?.classList.remove('hidden'); }
-function closeCV(){ cvModal?.classList.add('hidden'); }
-
-openCVBtn?.addEventListener('click', openCV);
-closeCVBtn?.addEventListener('click', closeCV);
-
-// Chiudi modale cliccando fuori dal contenuto
-cvModal?.addEventListener('click', (e) => {
-  if (e.target === cvModal) closeCV();
+/* ====== Visualizza CV (come sezione, non modale) ====== */
+const viewCVBtn = document.getElementById('view-cv');
+viewCVBtn?.addEventListener('click', () => {
+  history.pushState(null, '', '#cv');
+  showSection('cv');
 });
 
-/* ====== Sintesi vocale (dal CV allegato) ====== */
-// Mantengo la tua UX “Ascolta questo CV” con Web Speech API. [2](https://myoffice.accenture.com/personal/antonio_davino_accenture_com/_layouts/15/download.aspx?UniqueId=6320a520-211d-4635-b10d-45a83aee9eaa&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIwMmY4ZWUxMi0yMzI4LTQxNTAtYmE2Zi0wNGFlZGE3YWM5NGIiLCJhcHBfZGlzcGxheW5hbWUiOiJPZmZpY2UgMzY1IFNlYXJjaCBTZXJ2aWNlIiwiYXBwaWQiOiI2NmE4ODc1Ny0yNThjLTRjNzItODkzYy0zZThiZWQ0ZDY4OTkiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXlvZmZpY2UuYWNjZW50dXJlLmNvbUBlMDc5M2QzOS0wOTM5LTQ5NmQtYjEyOS0xOThlZGQ5MTZmZWIiLCJleHAiOiIxNzU2MDgwNjA5In0.CgoKBGFjcnMSAmMyCkAKDGVudHJhX2NsYWltcxIwQ0lXWnJzVUdFQUFhRms5bVpETmZPR05WTWpCUFNXaFROV3R0ZUdsSlFVRXFBQT09CjIKCmFjdG9yYXBwaWQSJDAwMDAwMDAzLTAwMDAtMDAwMC1jMDAwLTAwMDAwMDAwMDAwMAoKCgRzbmlkEgI2NBILCLygn_ys27E-EAUaDjIwLjE5MC4xMzIuMTA2Kiw2TldBZ09VMm84Sk91RHo5WmxvMlRkOW9ucnNjZVhDSldQZVE4UVV1T253PTCcATgBQhChvwhYPTAAoACAJ4maByjFShBoYXNoZWRwcm9vZnRva2VuUhJbImttc2kiLCJkdmNfY21wIl1aC1siYXBwX3JlcyJdaiRmMmU0OWJlZi04YjZjLTQzNDMtOWQwZi0yM2NhOTkwZmU0NjJyKTBoLmZ8bWVtYmVyc2hpcHwxMDAzN2ZmZThkM2UxOWExQGxpdmUuY29tegEyggESCTk9eeA5CW1JEbEpGY7dkW_rkgEHQW50b25pb5oBB0QnQXZpbm-iARxhbnRvbmlvLmRhdmlub0BhY2NlbnR1cmUuY29tqgEQMTAwMzdGRkU4RDNFMTlBMbIBOmdyb3VwLnJlYWQgYWxsZmlsZXMucmVhZCBhbGxwcm9maWxlcy5yZWFkIGFsbHByb2ZpbGVzLnJlYWTIAQE.YerkbUX1_pek8V7Q6ZzPYWp5HzT4a6OUmbam88Z6xdQ&ApiVersion=2.0&web=1)
+/* ====== Sintesi vocale (Web Speech API) ====== */
 const listenBtn = document.getElementById('btn-listen');
 let speaking = false;
 
@@ -82,7 +79,7 @@ listenBtn?.addEventListener('click', () => {
     listenBtn.textContent = '▶️ Ascolta questo CV';
     return;
   }
-  const blocks = Array.from(document.querySelectorAll('#cv-modal .cv'))
+  const blocks = Array.from(document.querySelectorAll('#cv .cv'))
     .map(s => s.innerText.replace(/\s+/g, ' ').trim())
     .join('\n');
   speaking = true;
@@ -91,7 +88,6 @@ listenBtn?.addEventListener('click', () => {
 });
 
 /* ====== Chat agente AI (placeholder) ====== */
-// Reimpiego la tua struttura di modale con iframe come placeholder per integrazione (Agentforce/Azure). [2](https://myoffice.accenture.com/personal/antonio_davino_accenture_com/_layouts/15/download.aspx?UniqueId=6320a520-211d-4635-b10d-45a83aee9eaa&Translate=false&tempauth=v1.eyJzaXRlaWQiOiIwMmY4ZWUxMi0yMzI4LTQxNTAtYmE2Zi0wNGFlZGE3YWM5NGIiLCJhcHBfZGlzcGxheW5hbWUiOiJPZmZpY2UgMzY1IFNlYXJjaCBTZXJ2aWNlIiwiYXBwaWQiOiI2NmE4ODc1Ny0yNThjLTRjNzItODkzYy0zZThiZWQ0ZDY4OTkiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXlvZmZpY2UuYWNjZW50dXJlLmNvbUBlMDc5M2QzOS0wOTM5LTQ5NmQtYjEyOS0xOThlZGQ5MTZmZWIiLCJleHAiOiIxNzU2MDgwNjA5In0.CgoKBGFjcnMSAmMyCkAKDGVudHJhX2NsYWltcxIwQ0lXWnJzVUdFQUFhRms5bVpETmZPR05WTWpCUFNXaFROV3R0ZUdsSlFVRXFBQT09CjIKCmFjdG9yYXBwaWQSJDAwMDAwMDAzLTAwMDAtMDAwMC1jMDAwLTAwMDAwMDAwMDAwMAoKCgRzbmlkEgI2NBILCLygn_ys27E-EAUaDjIwLjE5MC4xMzIuMTA2Kiw2TldBZ09VMm84Sk91RHo5WmxvMlRkOW9ucnNjZVhDSldQZVE4UVV1T253PTCcATgBQhChvwhYPTAAoACAJ4maByjFShBoYXNoZWRwcm9vZnRva2VuUhJbImttc2kiLCJkdmNfY21wIl1aC1siYXBwX3JlcyJdaiRmMmU0OWJlZi04YjZjLTQzNDMtOWQwZi0yM2NhOTkwZmU0NjJyKTBoLmZ8bWVtYmVyc2hpcHwxMDAzN2ZmZThkM2UxOWExQGxpdmUuY29tegEyggESCTk9eeA5CW1JEbEpGY7dkW_rkgEHQW50b25pb5oBB0QnQXZpbm-iARxhbnRvbmlvLmRhdmlub0BhY2NlbnR1cmUuY29tqgEQMTAwMzdGRkU4RDNFMTlBMbIBOmdyb3VwLnJlYWQgYWxsZmlsZXMucmVhZCBhbGxwcm9maWxlcy5yZWFkIGFsbHByb2ZpbGVzLnJlYWTIAQE.YerkbUX1_pek8V7Q6ZzPYWp5HzT4a6OUmbam88Z6xdQ&ApiVersion=2.0&web=1)
 const openAgentBtn = document.getElementById('open-agent');
 const agentModal = document.getElementById('agent-modal');
 const closeAgentBtn = document.getElementById('close-agent');
