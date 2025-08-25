@@ -10,6 +10,7 @@
   <meta name="theme-color" content="#0f172a" />
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="#home" aria-label="Torna alla Home">A·D</a>
@@ -24,18 +25,29 @@
     </div>
   </header>
 
+  <!-- Hero minimale -->
   <main id="home" class="hero hero--minimal">
     <div class="wrap hero__content">
       <figure class="avatar">
-        <img src="assets/antonio.jpg" alt="Antonio D’Avino" width="220" height="220" loading="eager" decoding="async" />
+        <img
+          src="assets/antonio.jpg"
+          alt="Antonio D’Avino"
+          width="220"
+          height="220"
+          loading="eager"
+          decoding="async"
+        />
       </figure>
+
       <div class="intro">
         <h1>Antonio D’Avino</h1>
         <p class="subtitle">Associate Director</p>
+
         <ul class="contacts">
           <li><span>📧</span> <a href="mailto:antonio.davino@accenture.com">antonio.davino@accenture.com</a></li>
           <li><span>📨</span> <a href="mailto:antonio.davino@gmail.com">antonio.davino@gmail.com</a></li>
         </ul>
+
         <div class="cta">
           <button class="btn primary" id="view-cv">Visualizza CV</button>
           <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">Scarica CV (PDF)</a>
@@ -44,6 +56,7 @@
     </div>
   </main>
 
+  <!-- Sezione CV -->
   <section id="cv" class="section hidden" aria-labelledby="cv-title">
     <div class="wrap">
       <div class="cv-toolbar">
@@ -66,17 +79,34 @@
           <p>
             Guido iniziative su Salesforce/Cloud e adozione GenAI (assistenti conversazionali, automazione ticket, integrazioni headless).
             Focalizzato su affidabilità operativa, scalabilità e change management.
-            PM & Program Architect per clienti RES and TELCO con team > 50 risorse.
-            Business Analyst Lead in Italia ed Europa con team > 20 risorse.
-            Sviluppatore C, C++, PHP in team > 30 risorse.
+            PM &amp; Program Architect per clienti RES and TELCO con team &gt; 50 risorse.
+            Business Analyst Lead in Italia ed Europa con team &gt; 20 risorse.
+            Sviluppatore C, C++, PHP in team &gt; 30 risorse.
           </p>
         </section>
 
+        <!-- Esperienze chiave: card testuali con icone -->
         <h3>Esperienze chiave</h3>
-        <section class="kpi">
-          <div><span>PM & Program Architect per clienti RES and TELCO con team > 50 risorse</span></div>
-          <div><span>Business Analyst Lead in Italia ed Europa con team > 20 risorse</span></div>
-          <div><span>Sviluppatore C, C++, PHP in team > 30 risorse</span></div>
+        <section class="xp-grid" aria-label="Esperienze chiave">
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">🏢</span>
+            <div class="xp-text"><strong>SFDC BU LEAD</strong> <span class="muted">(circa 400 risorse)</span></div>
+          </div>
+
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">📐</span>
+            <div class="xp-text"><strong>PM &amp; Program Architect</strong> <span class="muted">RES &amp; TELCO · team &gt; 50</span></div>
+          </div>
+
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">📊</span>
+            <div class="xp-text"><strong>Business Analyst Lead</strong> <span class="muted">Italia &amp; Europa · team &gt; 20</span></div>
+          </div>
+
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">💻</span>
+            <div class="xp-text"><strong>Sviluppatore</strong> <span class="muted">C, C++, PHP · team &gt; 30</span></div>
+          </div>
         </section>
 
         <section aria-labelledby="exp-title" class="cv-block">
@@ -100,13 +130,14 @@
     </div>
   </section>
 
-  <!-- Altre sezioni -->
+  <!-- Sezioni on‑demand (inizialmente nascoste) -->
   <section id="projects" class="section hidden"><div class="wrap"><h2>Progetti</h2></div></section>
   <section id="code" class="section hidden"><div class="wrap"><h2>Codice</h2></div></section>
   <section id="publications" class="section hidden"><div class="wrap"><h2>Pubblicazioni</h2></div></section>
   <section id="about" class="section hidden"><div class="wrap"><h2>Chi sono</h2></div></section>
   <section id="contact" class="section hidden"><div class="wrap"><h2>Contatti</h2></div></section>
 
+  <!-- Modale Chat AI (placeholder) -->
   <div id="agent-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="agent-title">
     <div class="modal__content">
       <header class="modal__header">
