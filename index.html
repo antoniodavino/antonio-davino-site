@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Antonio D’Avino — Associate Director at Accenture</title>
+  <title>Antonio D’Avino — Associate Director</title>
   <meta name="description" content="Profilo professionale di Antonio D’Avino. Associate Director at Accenture. Contatti e CV." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.ico" />
@@ -14,9 +14,7 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="#home" aria-label="Torna alla Home">A·D</a>
-
       <button class="burger" id="burger" aria-expanded="false" aria-controls="site-menu" aria-label="Apri il menu">☰</button>
-
       <nav id="site-menu" class="menu" aria-label="Principale">
         <a href="#projects" data-section="projects">Progetti</a>
         <a href="#code" data-section="code">Codice</a>
@@ -27,31 +25,19 @@
     </div>
   </header>
 
-  <!-- Hero minimale (visibile all'avvio) -->
+  <!-- Hero -->
   <main id="home" class="hero hero--minimal">
     <div class="wrap hero__content">
       <figure class="avatar">
-        <!-- Usa la tua foto salvata come assets/antonio.jpg -->
-        <img
-          src="assets/antonio.jpg"
-          alt="Antonio D’Avino"
-          width="220"
-          height="220"
-          loading="eager"
-          decoding="async"
-        />
+        <img src="assets/antonio.jpg" alt="Antonio D’Avino" width="220" height="220" loading="eager" decoding="async" />
       </figure>
-
       <div class="intro">
         <h1>Antonio D’Avino</h1>
-        <p class="subtitle">Associate Director at Accenture</p>
-
+        <p class="subtitle">Associate Director</p>
         <ul class="contacts">
           <li><span>📧</span> <a href="mailto:antonio.davino@accenture.com">antonio.davino@accenture.com</a></li>
           <li><span>📨</span> <a href="mailto:antonio.davino@gmail.com">antonio.davino@gmail.com</a></li>
-          <!-- Nessun riferimento a LinkedIn -->
         </ul>
-
         <div class="cta">
           <button class="btn primary" id="view-cv">Visualizza CV</button>
           <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">Scarica CV (PDF)</a>
@@ -60,7 +46,7 @@
     </div>
   </main>
 
-  <!-- Sezione CV (nascosta finché non richiesta) -->
+  <!-- CV Section -->
   <section id="cv" class="section hidden" aria-labelledby="cv-title">
     <div class="wrap">
       <div class="cv-toolbar">
@@ -75,7 +61,7 @@
       <article class="cv">
         <header>
           <h1 style="margin-bottom:6px">Antonio D’Avino</h1>
-          <p class="muted">Associate Director — Advanced App/Cloud Support & Engineering</p>
+          <p class="muted">Associate Director</p>
         </header>
 
         <section aria-labelledby="exec-sum" class="cv-block">
@@ -83,6 +69,8 @@
           <p>
             Guido iniziative su Salesforce/Cloud e adozione GenAI (assistenti conversazionali, automazione ticket, integrazioni headless).
             Focalizzato su affidabilità operativa, scalabilità e change management.
+            Esperienze pregresse come Project Manager e technical architect per trasformazioni TELCO e Resources con tecnologia Siebel,
+            Business Analyst Lead in ambito TELCO in Italia ed Europa, e sviluppatore C, C++, PHP nei primi sei anni di carriera presso clienti TELCO.
           </p>
         </section>
 
@@ -114,43 +102,14 @@
     </div>
   </section>
 
-  <!-- Sezioni on‑demand dal menu (inizialmente nascoste) -->
-  <section id="projects" class="section hidden" aria-labelledby="projects-title">
-    <div class="wrap">
-      <h2 id="projects-title">Progetti</h2>
-      <p class="muted">Selezione di iniziative Cloud / AI / Integrazioni. (Contenuti in arrivo)</p>
-    </div>
-  </section>
+  <!-- Altre sezioni (nascoste) -->
+  <section id="projects" class="section hidden"><div class="wrap"><h2>Progetti</h2></div></section>
+  <section id="code" class="section hidden"><div class="wrap"><h2>Codice</h2></div></section>
+  <section id="publications" class="section hidden"><div class="wrap"><h2>Pubblicazioni</h2></div></section>
+  <section id="about" class="section hidden"><div class="wrap"><h2>Chi sono</h2></div></section>
+  <section id="contact" class="section hidden"><div class="wrap"><h2>Contatti</h2></div></section>
 
-  <section id="code" class="section hidden" aria-labelledby="code-title">
-    <div class="wrap">
-      <h2 id="code-title">Codice</h2>
-      <p class="muted">Snippet e utility. (Contenuti in arrivo)</p>
-    </div>
-  </section>
-
-  <section id="publications" class="section hidden" aria-labelledby="pub-title">
-    <div class="wrap">
-      <h2 id="pub-title">Pubblicazioni</h2>
-      <p class="muted">Approfondimenti e casi d’uso. (Contenuti in arrivo)</p>
-    </div>
-  </section>
-
-  <section id="about" class="section hidden" aria-labelledby="about-title">
-    <div class="wrap">
-      <h2 id="about-title">Chi sono</h2>
-      <p class="muted">Bio estesa e valore che porto nei team. (Contenuti in arrivo)</p>
-    </div>
-  </section>
-
-  <section id="contact" class="section hidden" aria-labelledby="contact-title">
-    <div class="wrap">
-      <h2 id="contact-title">Contatti</h2>
-      <p class="muted">Modulo e canali di contatto. (Contenuti in arrivo)</p>
-    </div>
-  </section>
-
-  <!-- MODALE: Chat AI (placeholder, opzionale) -->
+  <!-- Chat AI Modal -->
   <div id="agent-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="agent-title">
     <div class="modal__content">
       <header class="modal__header">
