@@ -5,56 +5,41 @@
   --brand:#60a5fa; --brand-600:#3b82f6; --brand-700:#2563eb;
   --card:#0f172a; --border:#1f273a;
   --shadow:0 20px 40px rgba(0,0,0,.35);
-  --radius:16px; --radius-sm:12px; --pad:clamp(16px,2vw,24px);
+  --radius:18px; --radius-sm:12px; --pad:clamp(16px,2vw,24px);
   --w:1100px;
-  --ring: 0 0 0 3px rgba(96,165,250,.35);
-  --pill-bg: rgba(96,165,250,.14);
-  --pill-bd: rgba(96,165,250,.40);
-  /* Badge palette */
-  --b-sfdc: #6366f1;  /* indigo */
-  --b-telco:#3b82f6;  /* blue */
-  --b-res:  #10b981;  /* emerald */
-  --b-eu:   #a855f7;  /* purple */
-  --b-arch: #f59e0b;  /* amber */
-  --b-dev:  #ef4444;  /* red */
 }
 @media (prefers-color-scheme: light){
   :root{
     --bg:#fafafa; --fg:#0f172a; --muted:#667085; --surface:#ffffff;
     --card:#ffffff; --border:#e6e8ee; --shadow:0 10px 25px rgba(2,6,23,.08);
-    --ring: 0 0 0 3px rgba(37,99,235,.18);
-    --pill-bg: rgba(37,99,235,.10);
-    --pill-bd: rgba(37,99,235,.30);
   }
 }
 html, body { margin:0; padding:0; background:var(--bg); color:var(--fg);
-  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-img{ display:block; max-width:100%; }
-a{ color:inherit; text-decoration:none; }
+  font:16px/1.45 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+img{ display:block; max-width:100%; height:auto; }
+a{ color:inherit; text-decoration:underline; text-underline-offset:3px; }
 .wrap{ max-width:var(--w); margin-inline:auto; padding-inline:var(--pad); }
 
-/* ====== Header / Menu ====== */
-.site-header{ position:sticky; top:0; z-index:40; background:linear-gradient(180deg, rgba(0,0,0,.25), transparent);
-  backdrop-filter: blur(8px); }
-.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
-.brand{ display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px; border-radius:12px; background:var(--brand);
-  color:#000; font-weight:800; letter-spacing:.2px; }
-.menu{ display:flex; gap:16px; align-items:center; }
-.menu a{ padding:8px 12px; border-radius:10px; border:1px solid transparent; }
-.menu a:hover{ background:rgba(96,165,250,.12); border-color:rgba(96,165,250,.25); }
-.burger{ display:none; background:transparent; border:1px solid var(--border); color:var(--fg);
-  border-radius:10px; padding:6px 10px; }
-@media (max-width:840px){
-  .burger{ display:block; }
-  .menu{ position:fixed; top:64px; right:0; left:0; background:var(--surface);
-    display:flex; flex-direction:column; padding:12px var(--pad) 20px; border-bottom:1px solid var(--border);
-    transform:translateY(-120%); transition:transform .25s ease; }
-  .menu.open{ transform:translateY(0); }
+/* ====== Header ====== */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:linear-gradient(180deg, rgba(0,0,0,.25), transparent);
+  backdrop-filter: blur(8px);
 }
+.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+.brand{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:12px;
+  background:var(--brand); color:#0b1220; font-weight:800; letter-spacing:.2px;
+  text-decoration:none;
+}
+.menu{ display:flex; gap:16px; align-items:center; }
+.menu a{ padding:8px 10px; border-radius:10px; text-decoration:none; border:1px solid transparent; }
+.menu a:hover{ background:rgba(96,165,250,.14); border-color:rgba(96,165,250,.28); }
 
-/* ====== Hero minimal ====== */
-.hero{ min-height:calc(100dvh - 64px);
+/* ====== Hero ====== */
+.hero{
+  min-height:calc(100dvh - 64px);
   display:grid; place-items:center;
   background:
     radial-gradient(1200px 600px at 80% -20%, rgba(96,165,250,.18), transparent 60%),
@@ -62,42 +47,35 @@ a{ color:inherit; text-decoration:none; }
 }
 .hero__content{ display:grid; grid-template-columns:220px 1fr; gap:24px; align-items:center; }
 @media (max-width:760px){ .hero__content{ grid-template-columns:1fr; text-align:center; } }
-
-.avatar img{ width:220px; height:220px; object-fit:cover; border-radius:24px; border:1px solid var(--border);
-  box-shadow:var(--shadow); background:#111; }
-
+.avatar img{
+  width:220px; height:220px; object-fit:cover; border-radius:24px; border:1px solid var(--border);
+  box-shadow:var(--shadow); background:#111;
+}
 .intro h1{ margin:0; font-size:clamp(28px,4.5vw,40px); line-height:1.15; }
 .subtitle{ margin:.3rem 0 1rem; font-weight:600; color:var(--muted); }
-
 .contacts{ list-style:none; margin:0 0 1rem; padding:0; display:grid; gap:8px; }
-.contacts li{ display:flex; gap:8px; align-items:center; justify-content:flex-start; }
-.contacts a{ text-decoration:underline; text-underline-offset:3px; }
-
+.contacts a{ text-decoration:underline; }
 .cta{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start; }
-.btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
-  border:1px solid var(--border); background:var(--surface); color:var(--fg); transition:.2s ease; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
+  border:1px solid var(--border); background:var(--surface); color:var(--fg);
+  text-decoration:none; transition:.2s ease;
+}
 .btn:hover{ transform:translateY(-1px); }
 .btn.primary{ background:var(--brand); color:#0b1220; border-color:transparent; }
-.btn.ghost{ background:transparent; }
 
-/* ====== Sezioni on-demand ====== */
+/* ====== Sezioni ====== */
 .section{ padding:40px 0 80px; background:transparent; }
-.section.hidden{ display:none; }
 .muted{ color:var(--muted); }
-
-/* ====== CV base ====== */
-.cv-toolbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
-.cv-toolbar .tools{ display:flex; flex-wrap:wrap; gap:8px; }
 .cv{ background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; box-shadow:var(--shadow); }
-.cv h1{ margin:0 0 6px; font-size:1.6rem; }
-.cv-block{ margin-top:14px; }
+.cv h2{ margin:4px 0 12px; font-size:1.35rem; }
 
-/* ====== XP GRID (card esperienze con pill temporale + badge) ====== */
+/* ====== Esperienze (grid + card minimal) ====== */
 .xp-grid{
   display:grid;
   grid-template-columns:repeat(2, minmax(0,1fr));
   gap:14px;
-  margin:12px 0 16px;
+  margin:12px 0 4px;
 }
 @media (min-width:980px){ .xp-grid{ grid-template-columns:repeat(4, minmax(0,1fr)); } }
 @media (max-width:580px){ .xp-grid{ grid-template-columns:1fr; } }
@@ -105,7 +83,7 @@ a{ color:inherit; text-decoration:none; }
 .xp-card{
   position:relative;
   display:flex; align-items:center; gap:12px;
-  padding:14px; border-radius:18px;
+  padding:14px; border-radius:var(--radius);
   background:
     linear-gradient(180deg, rgba(96,165,250,.10), rgba(96,165,250,0) 60%),
     var(--card);
@@ -113,94 +91,68 @@ a{ color:inherit; text-decoration:none; }
   box-shadow:var(--shadow);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.xp-card:hover{ transform:translateY(-2px); border-color:rgba(96,165,250,.45); box-shadow:0 18px 36px rgba(2,6,23,.25); }
-.xp-card:focus-within{ outline:none; box-shadow:var(--shadow), var(--ring); border-color:rgba(96,165,250,.55); }
+.xp-card:hover{
+  transform:translateY(-1px);
+  border-color:rgba(96,165,250,.35);
+  box-shadow:0 16px 32px rgba(2,6,23,.22);
+}
 
+/* Icona ruolo (outline uniforme) */
 .xp-icon{
   width:46px; height:46px; border-radius:12px;
   display:grid; place-items:center; flex:0 0 46px;
-  font-size:24px; line-height:1;
   background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(255,255,255,.1) 40%, transparent 60%), rgba(96,165,250,.18);
   border:1px solid rgba(96,165,250,.35);
 }
-
-.xp-body{ flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; }
-.xp-text{ font-weight:600; }
-.xp-text .muted{ font-weight:500; margin-left:6px; white-space:nowrap; }
-
-/* Micro‑badge */
-.badges{ display:flex; flex-wrap:wrap; gap:6px; }
-.badge{
-  --bg: rgba(148,163,184,.18);
-  --bd: rgba(148,163,184,.45);
-  position:relative;
-  display:inline-flex; align-items:center; gap:6px;
-  padding:4px 8px; border-radius:999px;
-  background:var(--bg);
-  border:1px solid var(--bd);
-  font-size:.78rem; font-weight:700; letter-spacing:.02em;
-  color:var(--fg);
-  cursor:help;
-}
-.badge .mini{ font-size:.9em; line-height:1; }
-
-/* Varianti badge (color code) */
-.badge--sfdc{ --bg: color-mix(in oklab, var(--b-sfdc) 16%, transparent); --bd: color-mix(in oklab, var(--b-sfdc) 40%, transparent); }
-.badge--telco{ --bg: color-mix(in oklab, var(--b-telco) 16%, transparent); --bd: color-mix(in oklab, var(--b-telco) 40%, transparent); }
-.badge--res{ --bg: color-mix(in oklab, var(--b-res) 16%, transparent); --bd: color-mix(in oklab, var(--b-res) 40%, transparent); }
-.badge--eu{ --bg: color-mix(in oklab, var(--b-eu) 16%, transparent); --bd: color-mix(in oklab, var(--b-eu) 40%, transparent); }
-.badge--arch{ --bg: color-mix(in oklab, var(--b-arch) 16%, transparent); --bd: color-mix(in oklab, var(--b-arch) 40%, transparent); }
-.badge--lead{ --bg: color-mix(in oklab, #06b6d4 16%, transparent); --bd: color-mix(in oklab, #06b6d4 40%, transparent); }
-.badge--dev{ --bg: color-mix(in oklab, var(--b-dev) 16%, transparent); --bd: color-mix(in oklab, var(--b-dev) 40%, transparent); }
-
-/* Tooltip (hover + tastiera) */
-.badge[data-tip]::after{
-  content: attr(data-tip);
-  position:absolute; left:50%; top:100%;
-  transform: translate(-50%, 8px);
-  background: var(--surface);
-  color: var(--fg);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:8px 10px;
-  font-size:.78rem; font-weight:600;
-  box-shadow: var(--shadow);
-  white-space:nowrap; max-width:260px; text-overflow:ellipsis; overflow:hidden;
-  opacity:0; visibility:hidden; transition:.15s ease;
-  z-index:5;
-}
-.badge[data-tip]::before{
-  content:'';
-  position:absolute; left:50%; top:100%;
-  width:10px; height:10px;
-  background: var(--surface);
-  border-left:1px solid var(--border); border-top:1px solid var(--border);
-  transform: translate(-50%, -4px) rotate(45deg);
-  opacity:0; visibility:hidden; transition:.15s ease;
-  z-index:5;
-}
-.badge[data-tip]:hover::after,
-.badge[data-tip]:hover::before,
-.badge[data-tip]:focus-visible::after,
-.badge[data-tip]:focus-visible::before{
-  opacity:1; visibility:visible;
-  transform: translate(-50%, 6px);
+.xp-icon .i{
+  width:24px; height:24px; display:block;
+  stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
 }
 
-/* Pill temporale (destra) */
-.xp-time{
-  margin-left:auto;
-  padding:6px 10px;
-  border-radius:999px;
-  background:var(--pill-bg);
-  border:1px solid var(--pill-bd);
-  font-weight:700;
-  font-size:.85rem;
-  white-space:nowrap;
-  color:var(--fg);
+/* Titolo ruolo */
+.xp-body{ flex:1; min-width:0; display:flex; flex-direction:column; gap:0; }
+.xp-text{ font-weight:800; font-size:1.05rem; line-height:1.15; }
+.xp-text *{ all:unset; } /* garantisce che resti solo il peso del titolo */
+
+/* Accenti cromatici (opzionali) per icone e leggero gradiente card */
+:root{
+  --accent-lead:#3b82f6;      /* blu */
+  --accent-architect:#06b6d4; /* cyan */
+  --accent-analyst:#8b5cf6;   /* violet */
+  --accent-dev:#10b981;       /* emerald */
+}
+.xp-card.role-lead .xp-icon      { color:var(--accent-lead); }
+.xp-card.role-architect .xp-icon { color:var(--accent-architect); }
+.xp-card.role-analyst .xp-icon   { color:var(--accent-analyst); }
+.xp-card.role-dev .xp-icon       { color:var(--accent-dev); }
+
+/* (Facoltativo) un tocco di tinta per card in base al ruolo */
+.xp-card.role-lead{
+  background:linear-gradient(180deg, color-mix(in oklab, var(--accent-lead) 12%, transparent), transparent 60%), var(--card);
+}
+.xp-card.role-architect{
+  background:linear-gradient(180deg, color-mix(in oklab, var(--accent-architect) 12%, transparent), transparent 60%), var(--card);
+}
+.xp-card.role-analyst{
+  background:linear-gradient(180deg, color-mix(in oklab, var(--accent-analyst) 12%, transparent), transparent 60%), var(--card);
+}
+.xp-card.role-dev{
+  background:linear-gradient(180deg, color-mix(in oklab, var(--accent-dev) 12%, transparent), transparent 60%), var(--card);
 }
 
-@media (max-width:640px){
-  .xp-card{ align-items:flex-start; }
-  .xp-time{ margin-left:0; }
+/* Accessibilità: focus visibile sulle card */
+.xp-card:focus-within{
+  outline:none;
+  box-shadow:var(--shadow), 0 0 0 3px rgba(96,165,250,.35);
+  border-color:rgba(96,165,250,.55);
 }
+
+/* Stampa (facoltativo) */
+@media print{
+  body{ background:#fff; color:#111; }
+  .site-header, .hero, .menu, .cta, .contacts { display:none; }
+  .section{ padding:0; }
+  .wrap{ max-width:100%; padding-inline:0; }
+  .cv{ box-shadow:none; border-color:#ddd; }
+}
+
