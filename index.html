@@ -1,39 +1,225 @@
-<section id="esperienze-chiave">
-  <h2>Esperienze chiave — Legenda timeline</h2>
-  <div class="legend">
-    <div class="legend-item"><span class="swatch sfdc"></span> SFDC BU Lead</div>
-    <div class="legend-item"><span class="swatch cloud"></span> Cloud Transformation</div>
-    <div class="legend-item"><span class="swatch strategy"></span> Digital Strategy</div>
-    <div class="legend-item"><span class="swatch ai"></span> AI & Automation</div>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Antonio D’Avino — Associate Director</title>
+  <meta name="description" content="Profilo professionale di Antonio D’Avino. Associate Director at Accenture. Contatti e CV." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <meta name="theme-color" content="#0f172a" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#home" aria-label="Torna alla Home">A·D</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="site-menu" aria-label="Apri il menu">☰</button>
+      <nav id="site-menu" class="menu" aria-label="Principale">
+        <a href="#projects" data-section="projects">Progetti</a>
+        <a href="#code" data-section="code">Codice</a>
+        <a href="#publications" data-section="publications">Pubblicazioni</a>
+        <a href="#about" data-section="about">Chi sono</a>
+        <a href="#contact" data-section="contact">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero minimale -->
+  <main id="home" class="hero hero--minimal">
+    <div class="wrap hero__content">
+      <figure class="avatar">
+        <img
+          src="assets/antonio.jpg"
+          alt="Antonio D’Avino"
+          width="220"
+          height="220"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+
+      <div class="intro">
+        <h1>Antonio D’Avino</h1>
+        <p class="subtitle">Associate Director</p>
+
+        <ul class="contacts">
+          <li><span>📧</span> <a href="mailto:antonio.davino@accenture.com">antonio.davino@accenture.com</a></li>
+          <li><span>📨</span> <a href="mailto:antonio.davino@gmail.com">antonio.davino@gmail.com</a></li>
+        </ul>
+
+        <div class="cta">
+          <button class="btn primary" id="view-cv">Visualizza CV</button>
+          <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">Scarica CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sezione CV -->
+  <section id="cv" class="section hidden" aria-labelledby="cv-title">
+    <div class="wrap">
+      <div class="cv-toolbar">
+        <h2 id="cv-title">CV — Antonio D’Avino</h2>
+        <div class="tools">
+          <button id="btn-listen" class="btn ghost">▶️ Ascolta questo CV</button>
+          <button id="open-agent" class="btn ghost">🤖 Apri chat AI</button>
+          <a class="btn" href="assets/Antonio_DAvino_CV.pdf" target="_blank" rel="noopener">⬇️ PDF</a>
+        </div>
+      </div>
+
+      <article class="cv">
+        <header>
+          <h1 style="margin-bottom:6px">Antonio D’Avino</h1>
+          <p class="muted">Associate Director</p>
+        </header>
+
+        <section aria-labelledby="exec-sum" class="cv-block">
+          <h3 id="exec-sum">Executive Summary</h3>
+          <p>
+            Guido iniziative su Salesforce/Cloud e adozione GenAI (assistenti conversazionali, automazione ticket, integrazioni headless).
+            Focalizzato su affidabilità operativa, scalabilità e change management.
+            PM &amp; Program Architect per clienti RES and TELCO con team &gt; 50 risorse.
+            Business Analyst Lead in Italia ed Europa con team &gt; 20 risorse.
+            Sviluppatore C, C++, PHP in team &gt; 30 risorse.
+          </p>
+        </section>
+
+        <!-- Esperienze chiave: card con icone + micro-badge + pill temporale + tooltip -->
+        <h3>Esperienze chiave</h3>
+        <section class="xp-grid" aria-label="Esperienze chiave">
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">🏢</span>
+            <div class="xp-body">
+              <div class="xp-text">
+                <strong>SFDC BU LEAD</strong> <span class="muted">(circa 400 risorse)</span>
+              </div>
+              <div class="badges" aria-label="Tag contesto">
+                <span class="badge badge--sfdc" data-tip="Salesforce BU / Delivery leadership" tabindex="0">
+                  <span class="mini" aria-hidden="true">☁️</span> SFDC
+                </span>
+                <span class="badge badge--lead" data-tip="Guidance, people growth, governance" tabindex="0">
+                  <span class="mini" aria-hidden="true">🧭</span> LEAD
+                </span>
+              </div>
+            </div>
+            <span class="xp-time" aria-label="Periodo">Ruolo attuale — <time datetime="2022">da 2022</time></span>
+          </div>
+
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">📐</span>
+            <div class="xp-body">
+              <div class="xp-text">
+                <strong>PM &amp; Program Architect</strong> <span class="muted">RES &amp; TELCO · team &gt; 50</span>
+              </div>
+              <div class="badges" aria-label="Tag contesto">
+                <span class="badge badge--res" data-tip="Settore Resources (Energy, Utilities, ecc.)" tabindex="0">
+                  <span class="mini" aria-hidden="true">⚡</span> RES
+                </span>
+                <span class="badge badge--telco" data-tip="Telecomunicazioni: trasformazioni e programmi" tabindex="0">
+                  <span class="mini" aria-hidden="true">📡</span> TELCO
+                </span>
+                <span class="badge badge--arch" data-tip="Architecture / Program Architecture" tabindex="0">
+                  <span class="mini" aria-hidden="true">🏗️</span> ARCH
+                </span>
+              </div>
+            </div>
+            <span class="xp-time" aria-label="Periodo">
+              <time datetime="2014">2014</time>–<time datetime="2021">2021</time>
+            </span>
+          </div>
+
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">📊</span>
+            <div class="xp-body">
+              <div class="xp-text">
+                <strong>Business Analyst Lead</strong> <span class="muted">Italia &amp; Europa · team &gt; 20</span>
+              </div>
+              <div class="badges" aria-label="Tag contesto">
+                <span class="badge badge--telco" data-tip="Telco: analisi processi, requirement & KPI" tabindex="0">
+                  <span class="mini" aria-hidden="true">📡</span> TELCO
+                </span>
+                <span class="badge badge--eu" data-tip="Contesto europeo / multi-country" tabindex="0">
+                  <span class="mini" aria-hidden="true">🇪🇺</span> EU
+                </span>
+                <span class="badge badge--lead" data-tip="Leadership funzionale / coordinamento BA" tabindex="0">
+                  <span class="mini" aria-hidden="true">🧭</span> LEAD
+                </span>
+              </div>
+            </div>
+            <span class="xp-time" aria-label="Periodo">
+              <time datetime="2007">2007</time>–<time datetime="2013">2013</time>
+            </span>
+          </div>
+
+          <div class="xp-card">
+            <span class="xp-icon" aria-hidden="true">💻</span>
+            <div class="xp-body">
+              <div class="xp-text">
+                <strong>Sviluppatore</strong> <span class="muted">C, C++, PHP · team &gt; 30</span>
+              </div>
+              <div class="badges" aria-label="Tag contesto">
+                <span class="badge badge--dev" data-tip="Sviluppo software / delivery" tabindex="0">
+                  <span class="mini" aria-hidden="true">🧑‍💻</span> DEV
+                </span>
+                <span class="badge" data-tip="Linguaggio C" tabindex="0">
+                  <span class="mini" aria-hidden="true">💠</span> C
+                </span>
+                <span class="badge" data-tip="Linguaggio C++" tabindex="0">
+                  <span class="mini" aria-hidden="true">➕</span> C++
+                </span>
+                <span class="badge" data-tip="Linguaggio PHP" tabindex="0">
+                  <span class="mini" aria-hidden="true">🐘</span> PHP
+                </span>
+              </div>
+            </div>
+            <span class="xp-time" aria-label="Periodo">
+              <time datetime="2000">2000</time>–<time datetime="2005">2005</time>
+            </span>
+          </div>
+        </section>
+
+        <section aria-labelledby="exp-title" class="cv-block">
+          <h3 id="exp-title">Esperienza recente</h3>
+          <ul>
+            <li>
+              <strong>Associate Director</strong> (2023–oggi):
+              governance programmi enterprise e AMS; integrazione Agentforce headless su portale MEPA
+              (via MuleSoft; zero data at rest su Salesforce); roll‑out Assist Zen &amp; MAIA per clustering/automation ticket.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="skills-title" class="cv-block">
+          <h3 id="skills-title">Competenze</h3>
+          <p class="muted">Leadership, integrazioni API, GenAI, Salesforce, MuleSoft, Azure.</p>
+        </section>
+
+        <footer class="cv__foot muted">Versione: Agosto 2025 — © Antonio D’Avino</footer>
+      </article>
+    </div>
+  </section>
+
+  <!-- Sezioni on‑demand (inizialmente nascoste) -->
+  <section id="projects" class="section hidden"><div class="wrap"><h2>Progetti</h2></div></section>
+  <section id="code" class="section hidden"><div class="wrap"><h2>Codice</h2></div></section>
+  <section id="publications" class="section hidden"><div class="wrap"><h2>Pubblicazioni</h2></div></section>
+  <section id="about" class="section hidden"><div class="wrap"><h2>Chi sono</h2></div></section>
+  <section id="contact" class="section hidden"><div class="wrap"><h2>Contatti</h2></div></section>
+
+  <!-- Modale Chat AI (placeholder) -->
+  <div id="agent-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="agent-title">
+    <div class="modal__content">
+      <header class="modal__header">
+        <h3 id="agent-title">Chat con Antonio (AI)</h3>
+        <button id="close-agent" class="icon-btn" aria-label="Chiudi">✕</button>
+      </header>
+      <iframe id="agent-iframe" title="Chat AI" src="about:blank"></iframe>
+    </div>
   </div>
-</section>
 
-<section id="esperienze">
-  <h2>Esperienze</h2>
-
-  <article class="card sfdc">
-    <h3 class="role">SFDC BU Lead</h3>
-    <p class="meta"><span class="period">2022 — Oggi</span> · Napoli / Italia</p>
-    <p class="desc">Guida della Business Unit Salesforce (~400 risorse) …</p>
-  </article>
-
-  <article class="card cloud">
-    <h3 class="role">Cloud Transformation</h3>
-    <p class="meta"><span class="period">2019 — 2022</span> · Modernizzazione applicativa</p>
-    <p class="desc">Migrazione workload su cloud, standardizzazione CI/CD …</p>
-  </article>
-
-  <article class="card strategy">
-    <h3 class="role">Digital Strategy</h3>
-    <p class="meta"><span class="period">2016 — 2019</span> · Portfolio e governance</p>
-    <p class="desc">Definizione roadmap digitale, KPI di valore …</p>
-  </article>
-
-  <article class="card ai">
-    <h3 class="role">AI & Automation</h3>
-    <p class="meta"><span class="period">2023 — Oggi</span> · Assistenti e automazione</p>
-    <p class="desc">Assist Zen, MAIA per clustering e automazione ticket …</p>
-  </article>
-</section>
+  <script src="script.js" defer></script>
+</body>
+</html>
 
 
